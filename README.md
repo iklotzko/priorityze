@@ -1,9 +1,9 @@
-# priorityze
-Setting up
+# priorityze set up
 
-Go to Node
+#Go to Node and install
 
-Add Bower via: 
+#Add Bower via: 
 npm install -g bower
 
-Add Angular via:
+#install components via
+bower install
