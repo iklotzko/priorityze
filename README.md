@@ -1,2 +1,9 @@
 # priorityze
-Gonna put some stuff in here you know
+Setting up
+
+Go to Node
+
+Add Bower via: 
+npm install -g bower
+
+Add Angular via:
