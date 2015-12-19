@@ -24,3 +24,6 @@ user: padmin
 pwd : p123
 
 For the moment we'll use that for all db stuff, as the project matures--and our knowledge of mongo increases--we will break this up into different users with different roles.
+
+
+#I recommend using nodemon to avoid having to 

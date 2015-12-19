@@ -1,0 +1,12 @@
+{
+  "name": "priorityze",
+  "main": "server.js",
+  "dependencies": {
+    "bower": "^1.7.1",
+    "express": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "nodemon": "^1.8.1",
+    "socket.io": "latest"
+  }
+}
