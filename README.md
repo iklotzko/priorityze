@@ -5,6 +5,9 @@
 #Add Bower via: 
 npm install -g bower
 
+#Add Nodemon via:
+npm install -g nodemon
+
 #install components via
 bower install
 
@@ -26,4 +29,6 @@ pwd : p123
 For the moment we'll use that for all db stuff, as the project matures--and our knowledge of mongo increases--we will break this up into different users with different roles.
 
 
-#I recommend using nodemon to avoid having to 
+#I recommend using nodemon to avoid having to restart nodejs each time
+
+nodemon server.js

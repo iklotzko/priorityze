@@ -23,12 +23,12 @@ var Chat = mongoose.model('Chat', ChatSchema);
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/public/*', function(req, resp) {
-    console.log('goin home now');
+app.get('/', function(req, resp) {
     resp.sendFile('index.html');
 });
 
 app.post('/setup', function(req, resp) {
+    console.log('setting up');
     var chatData = [{
         created: new Date(),
         content: 'Hi',
@@ -63,6 +63,8 @@ app.get('/msg', function(req, resp) {
     Chat.find({
         'room': req.query.room.toLowerCase()
     }).exec(function(err, msgs) {
+        console.log('msgs=', msgs);
+        console.log('err=', err);
         resp.json(msgs)
     });
 });
