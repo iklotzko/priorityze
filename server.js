@@ -21,10 +21,30 @@ var ChatSchema = mongoose.Schema({
 
 var Chat = mongoose.model('Chat', ChatSchema);
 
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
+
+app.get('/bower_components/:module/:name', function(req, resp) {
+    sendOutJS(req, resp, 'bower_components');
+});
+app.get('/public/js/:name', function(req, resp) {
+    sendOutJS(req, resp, 'custom');
+});
+
+var sendOutJS = function(req, resp, mdl) {
+    console.log('sending out js');
+    if (mdl === 'bower_components') {
+        resp.sendFile(__dirname + '/bower_components/' + req.params.module + '/' + req.params.name);
+    } else if (mdl === 'custom') {
+        resp.sendFile(__dirname + '/public/js/' + req.params.name);
+    } else {
+        resp.send('huh? mdl shouldnt be ', mdl);
+        console.log('error error mdl = ', mdl);
+    }
+};
 
 app.get('/', function(req, resp) {
-    resp.sendFile('index.html');
+    console.log('req=', req['route']);
+    resp.sendFile(__dirname + '/public/index.html');
 });
 
 app.post('/setup', function(req, resp) {
@@ -67,6 +87,12 @@ app.get('/msg', function(req, resp) {
         console.log('err=', err);
         resp.json(msgs)
     });
+});
+
+
+io.on('connection', function(socket) {
+    console.log('what is this');
+    
 });
 
 
