@@ -89,9 +89,28 @@ app.get('/msg', function(req, resp) {
     });
 });
 
+var text = '';
 
 io.on('connection', function(socket) {
-    console.log('what is this');
+    console.log('just received a connection');
+    
+    
+    
+    socket.on('echo', function(data) {
+        text += data;
+        console.log('client is asking for an echo on: ', data);
+        socket.emit('echo', data);
+        console.log('echoed');
+    });
+    socket.on('echo-ack', function(data, callback) {
+        console.log('ack requested: ', [data, callback]);
+        callback(data);
+    });
+    
+    var i = 0;
+    setInterval(function() {
+        socket.emit('echo', 'hiya: ' + '[' + text + ']=' + (i++));
+    }, 500);
     
 });
 

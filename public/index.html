@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="example">
 <head>
     <title>Priorityze</title>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/socket.io-client/socket.io.js"></script>
     <script src="/public/js/angular-socket-example.js"></script>
+    <script>
+    </script>
 </head>
 <body>
-    <h1>Main Page</h1>
-    <input type="text" ng-model="name" />{{name}}
+    <div ng-controller="Ctrl">
+        <input ng-model="dataToSend">
+        <button ng-click="emitBasic()">send</button>
+        <button ng-click="emitACK()">send ack</button>
+        <div>resp: {{serverResponse}}</div>
+        <div>resp: {{serverResponseACK}}</div>
+    </div>
 </body>
 </html>
