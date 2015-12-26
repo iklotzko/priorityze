@@ -13,8 +13,8 @@ app.controller('Ctrl', function Ctrl($scope, $socket) {
     $socket.on('redis-msg', function(data) {
         console.log('hello from pc: ', data);
         $scope.$apply(function() {
-            $scope.serverResponse = data;
-            $scope.serverResponseACK = data;
+            $scope.serverResponse = $scope.serverResponse + '--' + data;
+            $scope.serverResponseACK = $scope.serverResponseACK + '--' + data;
         });
     });
 
