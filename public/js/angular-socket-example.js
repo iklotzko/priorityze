@@ -10,6 +10,14 @@ app.config(function($socketProvider) {
 });
 
 app.controller('Ctrl', function Ctrl($scope, $socket) {
+    $socket.on('redis-msg', function(data) {
+        console.log('hello from pc: ', data);
+        $scope.$apply(function() {
+            $scope.serverResponse = data;
+            $scope.serverResponseACK = data;
+        });
+    });
+
     $socket.on('echo', function(data) {
         console.log('hello: ', data);
         $scope.$apply(function() {
