@@ -27,7 +27,9 @@ cd redis-stable
 make
 sudo make install
 #nodemon
-npm install -g nodemon
+sudo npm install -g nodemon
+cd /vagrant/
+sudo npm install
 
 
 
