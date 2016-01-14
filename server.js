@@ -19,7 +19,7 @@ var configDB = require('./config/database.js');
 // configuration ===============================================================
 mongoose.connect('mongodb://' + configDB.mdbHost + ':' +configDB.mdbHost + '/' + configDB.mdbName);
 
-// require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
@@ -40,6 +40,12 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 // launch ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);
+
+//process.once('SIGUSR2', function () {
+//    gracefulShutdown(function () {
+//        process.kill(process.pid, 'SIGUSR2');
+//    });
+//});
 
 //var mdbUser = 'priorityze',
 //    mdbHost = 'localhost',
