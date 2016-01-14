@@ -41,11 +41,11 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 app.listen(port);
 console.log('The magic happens on port ' + port);
 
-//process.once('SIGUSR2', function () {
-//    gracefulShutdown(function () {
-//        process.kill(process.pid, 'SIGUSR2');
-//    });
-//});
+process.once('SIGUSR2', function () {
+    console.log('Killed via SIGUSR2');
+    // Graceful cleanup & shutdown
+    process.exit(0); // Exit successfully
+});
 
 //var mdbUser = 'priorityze',
 //    mdbHost = 'localhost',

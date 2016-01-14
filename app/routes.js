@@ -8,7 +8,7 @@ module.exports = function(app, passport) {
     // =====================================
     app.get('/', function(req, res) {
         res.render('index.ejs'); // load the index.ejs file
-        console.log('Test9');
+        console.log('Test1s2');
     });
 
     // =====================================
