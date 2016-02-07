@@ -17,7 +17,7 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 #not sure this should be part of provisioning
-#mongo priorityze /vagrant/_conf/mongodb/create.js
+mongo priorityze /vagrant/_conf/mongodb/create.js
 #redis
 sudo apt-get install build-essential
 sudo apt-get install tcl8.5
