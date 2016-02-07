@@ -119,7 +119,7 @@ io.on('connection', function (socket) {
 
 
     redisClient1.on('message', function (channel, message) {
-        console.log('we are getting a message from channel 2');
+        console.log('we are getting a message from channel [' + channel + ']');
         socket.emit('redis-msg', message);
     });
     redisClient1.subscribe("priorityze-channel");
