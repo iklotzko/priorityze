@@ -2,13 +2,13 @@
 <html ng-app="example">
 <head>
     <title>Priorityze</title>
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/socket.io-client/socket.io.js"></script>
-    <script src="/public/js/angular-socket-example.js"></script>
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen" />
     <script>
     </script>
 </head>
 <body>
+    
     <div ng-controller="Ctrl">
         <input ng-model="dataToSend">
         <button ng-click="emitBasic()">send</button>
@@ -16,5 +16,9 @@
         <div>resp: {{serverResponse}}</div>
         <div>resp: {{serverResponseACK}}</div>
     </div>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/socket.io-client/socket.io.js"></script>
+    <script src="/public/js/angular-socket-example.js"></script>
 </body>
 </html>
