@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="prioritize">
+<head>
+    <title>Priorityze</title>
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen" />
+    <script>
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+           <ul class="nav nav-pills">
+               <li role="presentation" class="active"><a href="#home">Home</a></li>
+               <li role="presentation"><a href="#messages">Messages</a></li>
+               <li role="presentation"><a href="#about">About</a></li>
+               <li role="presentation"><a href="#contact">Contact</a></li>
+           </ul> 
+        </div>
+    </div>
+</nav>
+<div ng-view>
+    
+</div>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/bower_components/socket.io-client/socket.io.js"></script>
+<script src="/public/js/navigation.js"></script>
+</body>
+</html>
+
